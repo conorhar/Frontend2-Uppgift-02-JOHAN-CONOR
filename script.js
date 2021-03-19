@@ -6,40 +6,49 @@ fetch('https://deckofcardsapi.com/api/deck/new/draw/?count=52')
 function load(data) {
     const deck = data.cards;
     const playerHand = [];
+    const dealerHand = [];
     let playerScore = 0;
+    let dealerScore = 0;
 
     console.log(deck);
     addValues();
     startHand();
 
     function startHand(){
-        let output = "";
+        let playerOutput = "";
 
         for (let i = 0; i < 2; i++) {
-            let card = deck.pop();
-            playerHand.push(card);
-            output += `<img src="${card.image}" alt="card">`
+            let playerCard = deck.pop();
+            playerHand.push(playerCard);
+            playerOutput += `<img src="${playerCard.image}" alt="card">`;
+
+            let dealerCard = deck.pop();
+            dealerHand.push(dealerCard);
         }
 
-        playerScore = getScore();
+        playerScore = getPlayerScore();
 
         console.log(deck);
         console.log(playerHand);
         
-        document.getElementById("player-hand").innerHTML = output;
+        let dealerImage = dealerHand[0].image;
+        document.getElementById("dealer-hand").innerHTML = `<img src="${dealerImage}" alt="card">`;
+        document.getElementById("dealer-score").innerHTML = dealerHand[0].score;
+        
+        document.getElementById("player-hand").innerHTML = playerOutput;
         document.getElementById("player-score").innerHTML = playerScore;
     }
 
-    let btnNewCard = document.getElementById("new-draw");
-    btnNewCard.addEventListener("click", function() {
+    $("#new-draw").click(function() {
         let card = deck.pop();
         playerHand.push(card);
 
-        playerScore = getScore();
+        playerScore = getPlayerScore();
         
         document.getElementById("player-hand").innerHTML += `<img src="${card.image}" alt="card">`;
         document.getElementById("player-score").innerHTML = playerScore;
 
+        checkIfBust(playerScore);
         console.log(deck);
         console.log(playerHand);
     });
@@ -58,7 +67,7 @@ function load(data) {
         });
     }
 
-    function getScore(){
+    function getPlayerScore(){
         let score = 0;
         
         playerHand.forEach(card => {
@@ -66,6 +75,24 @@ function load(data) {
         });
 
         return score;
+    }
+
+    function getDealerScore() {
+        let score = 0;
+        
+        dealerHand.forEach(card => {
+            score += card.score;
+        });
+
+        return score;
+    }
+
+    function checkIfBust(score) {
+        if (score > 21){
+            console.log("dealer won");
+
+            document.getElementById("game-result").innerText = "DEALER WON :("
+        }
     }
 }
 
