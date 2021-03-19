@@ -4,28 +4,48 @@ myApp.run(function($rootScope) {
     $rootScope.message = "Yo!"
 })
 
+let deckId = "";
 
-loadDeck();
-const deck = getFromLocalStorage("deck");
-const deckId = deck.deck_id;
-console.log(deck);
-console.log(deckId);
+function newGame(){
+    loadDeck();
+    const deck = getFromLocalStorage("deck");
+    console.log(deck);
+    deckId = deck.deck_id;
 
-loadHand(deckId);
+    console.log(deck);
+    console.log(deckId);
+}
 
-let btnNewCard = document.getElementById("new-card");
-btnNewCard.addEventListener("click", function() {
-    showCard();
+const playerHand = [];
+
+let btnNewGame = document.getElementById("new-game");
+btnNewGame.addEventListener("click", function() {
+    newGame();
+    loadDraw(2);
+    showCards(2);
     console.log("click");
 });
 
-function showCard(){
-    let hand = getFromLocalStorage("hand");
+let btnNewCard = document.getElementById("new-draw");
+btnNewCard.addEventListener("click", function() {
+    loadDraw(1);
+    showCards(1);
+    console.log("click");
+});
 
-    let output = `<img src="${hand.cards[0].image}" alt="card">`
-    document.getElementById("card-1").innerHTML = output;
+function showCards(count){
+    let draw = getFromLocalStorage("draw");
+    let output = "";
+    
+    draw.cards.forEach(card => {
+        output += `<img src="${card.image}" alt="card">`
+        playerHand.push(card);
+    });
+    
+    document.getElementById("player-hand").innerHTML = output;
 
-    loadHand(deckId);
+    console.log(playerHand);
+    loadDraw(count);
 }
 
 function loadDeck(){
@@ -43,10 +63,10 @@ function getFromLocalStorage(key){
     return result;
 }
 
-function loadHand(deckId){
-    fetch(`https://deckofcardsapi.com/api/deck/${deckId}/draw/?count=1`)
+function loadDraw(count){
+    fetch(`https://deckofcardsapi.com/api/deck/${deckId}/draw/?count=${count}`)
     .then(res=>res.json())
-    .then(data=> sendToLocalStorage("hand", data))
+    .then(data=> sendToLocalStorage("draw", data))
 }
 
 
