@@ -32,7 +32,7 @@ function load(data) {
         console.log(playerHand);
         
         let dealerImage = dealerHand[0].image;
-        document.getElementById("dealer-hand").innerHTML = `<img src="${dealerImage}" alt="card"><img src="img/card-back.png" alt="card">`;
+        document.getElementById("dealer-hand").innerHTML = `<img src="${dealerImage}" alt="card"><img id="card-back" src="img/card-back.png" alt="card">`;
         document.getElementById("dealer-score").innerHTML = dealerHand[0].score;
         
         document.getElementById("player-hand").innerHTML = playerOutput;
