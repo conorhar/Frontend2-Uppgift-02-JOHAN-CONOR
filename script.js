@@ -32,11 +32,11 @@ function load(data) {
         console.log(playerHand);
         
         let dealerImage = dealerHand[0].image;
-        document.getElementById("dealer-hand").innerHTML = `<img src="${dealerImage}" alt="card"><img id="card-back" src="img/card-back.png" alt="card">`;
-        document.getElementById("dealer-score").innerHTML = dealerHand[0].score;
+        $("#dealer-hand").html(`<img src="${dealerImage}" alt="card"><img id="card-back" src="img/card-back.png" alt="card">`);
+        $("#dealer-score").html(dealerHand[0].score);
         
-        document.getElementById("player-hand").innerHTML = playerOutput;
-        document.getElementById("player-score").innerHTML = playerScore;
+        $("#player-hand").html(playerOutput);
+        $("#player-score").html(playerScore);
     }
 
     $("#new-draw").click(function() {
@@ -45,8 +45,8 @@ function load(data) {
 
         playerScore = getPlayerScore();
         
-        document.getElementById("player-hand").innerHTML += `<img src="${card.image}" alt="card">`;
-        document.getElementById("player-score").innerHTML = playerScore;
+        $("#player-hand").append(`<img src="${card.image}" alt="card">`);
+        $("#player-score").html(playerScore);
 
         checkIfBust(playerScore);
         console.log(deck);
@@ -91,7 +91,7 @@ function load(data) {
         if (score > 21){
             console.log("dealer won");
 
-            document.getElementById("game-result").innerText = "DEALER WON :("
+            $("#game-result").text("DEALER WON :(");
         }
     }
 }
