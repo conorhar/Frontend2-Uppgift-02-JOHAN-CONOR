@@ -1,3 +1,8 @@
+body {
+    background-image: url(img/bg.jpeg);
+    background-size: cover;
+}
+
 #title {
     font-family: 'Ultra', serif;
     /* margin-left: 460px; */
@@ -32,7 +37,14 @@
 .display {
     background-color: yellowgreen;
     border-radius: 12px;
+    /* color: white; */
+    
 }
+
+/* .btn {
+    background-color: green;
+    color: white;
+} */
 
 /* .buttons {
     padding-bottom: 10px;
