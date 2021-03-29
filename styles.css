@@ -1,5 +1,94 @@
+#title {
+    font-family: 'Ultra', serif;
+    /* margin-left: 460px; */
+    padding-top: 10px;
+    text-align: center;
+}
+
 #card-back {
-    border: 2px solid #807373;
+    /* border: 2px solid #807373; */
+    border-radius: 6px;
+    /* padding: 1px; */
+}
+
+.deck-back {
+    /* border: 2px solid #807373; */
+    border-radius: 6px;
+    /* padding: 2px; */
+}
+
+.table-left {
+    background-color: green;
+    border-top-left-radius: 12px;
+    border-bottom-left-radius: 12px;
+}
+
+.table-right {
+    background-color: green;
+    border-top-right-radius: 12px;
+    border-bottom-right-radius: 12px;
+}
+
+.display {
+    background-color: yellowgreen;
     border-radius: 12px;
-    padding: 2px;
+}
+
+/* .buttons {
+    padding-bottom: 10px;
+    margin-left: 500px;
+} */
+
+#new-draw {
+    margin-right: 5px;
+}
+
+#stay {
+    margin-left: 5px;
+}
+
+.card-front {
+    width: 144px;
+    height: auto; 
+}
+
+.scores {
+    padding-right: 10px;
+}
+
+.flip {
+    display: inline-block;
+}
+
+/* .front img {
+    position: absolute;
+    z-index: 333;
+} */
+
+/* .back img {
+    position: absolute;
+} */
+
+#parent {
+    position: relative;
+    top: 0;
+    left: 0;
+}
+
+#img-0 {
+    position: relative;
+    top: 0;
+    left: 0;
+}
+
+.stacked-card {
+    position: absolute;
+    top: 54px;
+    left: 15px;
+}
+
+@media screen and (max-width: 1024px) {
+    #parent {
+        display: none !important;
+    }
 }

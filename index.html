@@ -7,23 +7,120 @@
     <title>Document</title>
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Ultra&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
-    <div id="dealer-hand"></div>
-    <div id="dealer-score"></div>
-
-    <span id="game-result"></span>
+    <div class="container">
+        <h3 id="title">BLACKJACK</h3>
+        <div class="row mt-3">
+            <div class="col-md-10  table-left">
+                <div class="row pt-5 pb-4 pl-3">
+                    <div id="dealer-hand">
+                        <span id="dealer-first-card"></span>
+                        <span id="dealer-next-cards">
+                            <!-- <img id="card-back" src="img/card-back.png" alt="card"> -->
+                        </span>
+                    </div>
+                </div>
+                <div class="row pb-5 pl-3">
+                    <div id="player-hand">
+                        <span id ="player-cards"></span>
+                    </div>
+                </div>
+            </div>
+            <div class ="col-md-2 table-right">
+                <div class="row h-100">
+                    <div class="col-md-12"></div>
+                    <div id="parent" class="col-md-12 align-items-center d-flex">
+                        <img id="img-0" class="deck-back" src="img/card-back.png" alt="card">
+                        <img id="player-1" class="deck-back stacked-card" src="img/card-back.png" alt="card">
+                        <img id="player-2" class="deck-back stacked-card" src="img/card-back.png" alt="card">
+                        <img id="player-3" class="deck-back stacked-card" src="img/card-back.png" alt="card">
+                        <img id="player-4" class="deck-back stacked-card" src="img/card-back.png" alt="card">
+                        <img id="player-5" class="deck-back stacked-card" src="img/card-back.png" alt="card">
+                        <img id="player-6" class="deck-back stacked-card" src="img/card-back.png" alt="card">
+                        <img id="player-7" class="deck-back stacked-card" src="img/card-back.png" alt="card">
+                        <img id="dealer-1" class="deck-back stacked-card" src="img/card-back.png" alt="card">
+                        <img id="dealer-2" class="deck-back stacked-card" src="img/card-back.png" alt="card">
+                        <img id="dealer-3" class="deck-back stacked-card" src="img/card-back.png" alt="card">
+                        <img id="dealer-4" class="deck-back stacked-card" src="img/card-back.png" alt="card">
+                        <img id="dealer-5" class="deck-back stacked-card" src="img/card-back.png" alt="card">
+                        <img id="dealer-6" class="deck-back stacked-card" src="img/card-back.png" alt="card">
+                        <img id="dealer-7" class="deck-back stacked-card" src="img/card-back.png" alt="card">
+                    </div>
+                    <div class="col-md-12"></div>
+                </div>
+            </div>
+            
+        </div>
+        <div class="row mt-3 display">
+            <div class="col-md-5 text-center p-2">
+                <h5>Current game</h5>
+                <span class="scores">Player: <span id="player-score"></span></span>
+                <span>Dealer: <span id="dealer-score"></span></span>
+            </div>
+            <div class="text-center col-md-2 p-3 buttons">
+                <button type="button" id="new-draw" class="btn btn-success">Hit me!</button>
+                <button type="button" id="stay" class="btn btn-success">Stay</button>
+            </div>
+            <div class="col-md-5 text-center p-2">
+                <h5 class="text-center">Games won</h5>
+                <span class="scores">
+                    Player: <span id="player-games-won">0</span>
+                </span>
+                <span>
+                    Dealer: <span id="dealer-games-won">0</span>
+                </span>
+            </div>
+        </div>
+        
+    </div>
     
-    <div id="player-hand"></div>
-    <div id="player-score"></div>
+    <!-- Modals -->
+    <div class="modal fade" id="result-modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header d-flex justify-content-center">
+            <h5 class="modal-title" id="result-title">Modal title</h5>
+            </div>
+            <div class="modal-body text-center">
+                <div class="dealer-results"></div>
+                <div class="player-results"></div>
+            </div>
+            <div class="modal-footer d-flex justify-content-center">
+            <button type="button" class="btn btn-primary play-again">Play again</button>
+            </div>
+        </div>
+        </div>
+    </div>
 
-    <button id="new-draw">Hit me!</button>
+    <div class="modal fade" id="player-win-modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header d-flex justify-content-center">
+            <h5 class="modal-title">YOU WIN!</h5>
+            </div>
+            <div class="modal-body text-center">
+                <div class="dealer-results"></div>
+                <div class="player-results"></div>
+            </div>
+            <div class="modal-footer d-flex justify-content-center">
+            <button type="button" class="btn btn-primary play-again">Play again</button>
+            </div>
+        </div>
+        </div>
+    </div>
+
+    <br><br><br><br>
     
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.rawgit.com/nnattawat/flip/master/dist/jquery.flip.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns" crossorigin="anonymous"></script>
-    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.6.1/gsap.min.js"></script>
+
     <script src="script.js"></script>
 </body>
 </html>
