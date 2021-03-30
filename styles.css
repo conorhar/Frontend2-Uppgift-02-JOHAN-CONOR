@@ -4,15 +4,26 @@ body {
     background-size: cover;
     background-attachment: fixed;
     background-position: center; 
+
+    overflow: hidden;
 }
 
-.modal {
+/* body.modal {
+    position: fixed !important;
+    top: 0 !important;
+    right: 0 !important;
+    bottom: 0 !important;
+    left: 0 !important;
+    overflow-y: scroll !important;
+} */
+
+/* .modal {
     padding-right: 0 !important; 
 }
   
 html {
     overflow-y: scroll !important;
-}
+} */
 
 #title {
     font-family: 'Ultra', serif;

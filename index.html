@@ -14,6 +14,42 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+
+    <!-- Modals -->
+    <div class="modal fade" id="result-modal" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header d-flex justify-content-center">
+            <h5 class="modal-title" id="result-title">Modal title</h5>
+            </div>
+            <div class="modal-body text-center">
+                <div class="dealer-results"></div>
+                <div class="player-results"></div>
+            </div>
+            <div class="modal-footer d-flex justify-content-center">
+            <button type="button" class="btn btn-primary play-again">Play again</button>
+            </div>
+        </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="player-win-modal" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header d-flex justify-content-center">
+            <h5 class="modal-title">YOU WIN!</h5>
+            </div>
+            <div class="modal-body text-center">
+                <div class="dealer-results"></div>
+                <div class="player-results"></div>
+            </div>
+            <div class="modal-footer d-flex justify-content-center">
+            <button type="button" class="btn btn-primary play-again">Play again</button>
+            </div>
+        </div>
+        </div>
+    </div>
+    
     
     <div class="container">
         <h3 id="title">BLACKJACK</h3>
@@ -79,41 +115,6 @@
             </div>
         </div>
         
-    </div>
-    
-    <!-- Modals -->
-    <div class="modal fade" id="result-modal" tabindex="-1" role="dialog" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered" role="document">
-        <div class="modal-content">
-            <div class="modal-header d-flex justify-content-center">
-            <h5 class="modal-title" id="result-title">Modal title</h5>
-            </div>
-            <div class="modal-body text-center">
-                <div class="dealer-results"></div>
-                <div class="player-results"></div>
-            </div>
-            <div class="modal-footer d-flex justify-content-center">
-            <button type="button" class="btn btn-primary play-again">Play again</button>
-            </div>
-        </div>
-        </div>
-    </div>
-
-    <div class="modal fade" id="player-win-modal" tabindex="-1" role="dialog" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered" role="document">
-        <div class="modal-content">
-            <div class="modal-header d-flex justify-content-center">
-            <h5 class="modal-title">YOU WIN!</h5>
-            </div>
-            <div class="modal-body text-center">
-                <div class="dealer-results"></div>
-                <div class="player-results"></div>
-            </div>
-            <div class="modal-footer d-flex justify-content-center">
-            <button type="button" class="btn btn-primary play-again">Play again</button>
-            </div>
-        </div>
-        </div>
     </div>
 
     <br><br><br><br>
