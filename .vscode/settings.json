@@ -1,3 +1,5 @@
 {
-    "liveServer.settings.port": 5501
+    "liveServer.settings.port": 5501,
+    "appService.defaultWebAppToDeploy": "/subscriptions/0aeb3dd1-dda2-417f-8790-0f05e9324351/resourceGroups/blackjack/providers/Microsoft.Web/sites/blackjackfend2",
+    "appService.deploySubpath": "."
 }
