@@ -12,8 +12,22 @@ body {
     background-position: center; 
 }
 
+@font-face {
+    font-family: 'MissionGothic';
+    src: url(fonts/Mission\ Gothic\ Regular.otf) format('opentype'); 
+}  
+
+@font-face {
+    font-family: 'Orwellian';
+    src: url(fonts/Orwellian\ Final\ OTF.otf) format('opentype'); 
+}  
+
+.modal {
+    font-family: 'MissionGothic', serif;
+}
+
 #title {
-    font-family: 'Ultra', serif;
+    font-family: 'Orwellian', serif;
     /* margin-left: 460px; */
     padding-top: 10px;
     text-align: center;
@@ -44,6 +58,7 @@ body {
 }
 
 .display {
+    font-family: 'MissionGothic', serif;
     background-color: yellowgreen;
     border-radius: 12px;
     /* color: white; */
