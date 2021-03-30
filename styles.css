@@ -14,12 +14,12 @@ body {
 
 @font-face {
     font-family: 'MissionGothic';
-    src: url(fonts/Mission\ Gothic\ Regular.otf) format('opentype'); 
+    src: url("fonts/Mission\ Gothic\ Regular.otf") format('opentype'); 
 }  
 
 @font-face {
     font-family: 'Orwellian';
-    src: url(fonts/Orwellian\ Final\ OTF.otf) format('opentype'); 
+    src: url("fonts/Orwellian\ Final\ OTF.otf") format('opentype'); 
 }  
 
 .modal {
