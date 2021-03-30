@@ -48,6 +48,7 @@ function reset() {
         returnCardsAnimation();
     }
     deck = JSON.parse(localStorage.getItem("deck"));
+    console.log(deck);
     shuffle(deck);
     playerHand = [];
     dealerHand = [];
@@ -132,8 +133,6 @@ function dealCardsAnimation() {
 }
 
 function startGame(){
-    console.log(deck);
-
     dealCardsAnimation();
 
     for (let i = 0; i < 2; i++) {
