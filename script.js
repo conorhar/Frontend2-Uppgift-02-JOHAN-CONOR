@@ -1,7 +1,3 @@
-window.onload=function() {
-    document.getElementById('loading-mask').style.display='none';
-}
-
 let deck;
 let playerHand = [];
 let dealerHand = [];
