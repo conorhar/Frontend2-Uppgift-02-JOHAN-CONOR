@@ -98,6 +98,7 @@ function addResultCodes(){
 }
 
 function dealCardsAnimation() {
+    disableButtons();
     $("#dealer-hand").css({"visibility":"hidden"})
     $("#player-hand").css({"visibility":"hidden"})
     
@@ -129,6 +130,7 @@ function dealCardsAnimation() {
         $("#player-card-2").flip(true);
         $("#dealer-score").text(dealerHand[0].score);
         $("#player-score").text(playerScore);
+        enableButtons();
     }, 5000);
 }
 
@@ -261,6 +263,7 @@ function newDrawAnimation() {
         $(`#player-${playerCardsDealt}`).hide();
         $(`#player-card-${playerCardsDealt}`).flip(true);
         $("#player-score").text(playerScore);
+        enableButtons();
     }, 1000);
 }
 
@@ -273,6 +276,7 @@ $("#new-draw").click(function() {
     playerScore = getScore(playerHand);
     
     if (runAnimations == true) {
+        disableButtons();
         $("#player-cards").append(`<div id="player-card-${playerCardsDealt}" class="flip">
                                         <div class="front flip">
                                             <img id="card-back" src="img/card-back.png" alt="card">
@@ -308,7 +312,10 @@ $("#stay").click(function() {
         return;
     }
     
-    if (runAnimations == true) dealerDraw();
+    if (runAnimations == true) {
+        disableButtons();
+        dealerDraw();
+    } 
     else dealerDrawNoAnimations();
 });
 
@@ -623,4 +630,14 @@ function shuffle(array) {
     }
     
     return array;
-}    
+}   
+
+function disableButtons() {
+    $("#new-draw").attr('disabled', 'disabled');
+    $("#stay").attr('disabled', 'disabled');
+}
+
+function enableButtons() {
+    $("#new-draw").removeAttr('disabled');
+    $("#stay").removeAttr('disabled');
+}
