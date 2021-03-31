@@ -1,4 +1,20 @@
-@media screen and (min-width: 1024px) {
+/* @font-face {
+    font-family: 'orwellian_regularregular';
+    src: url('fonts/orwellian_final_otf-webfont.woff2') format('woff2'),
+         url('fonts/orwellian_final_otf-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'mission_gothicregular';
+    src: url('fonts/mission_gothic_regular-webfont.woff2') format('woff2'),
+         url('fonts/mission_gothic_regular-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+} */
+
+@media screen and (min-width: 1367px) {
     body {
         overflow: hidden;
     }
@@ -12,22 +28,12 @@ body {
     background-position: center; 
 }
 
-/* @font-face {
-    font-family: 'MissionGothic';
-    src: url("fonts/Mission\ Gothic\ Regular.otf") format('opentype'); 
-}  
-
-@font-face {
-    font-family: 'Orwellian';
-    src: url("fonts/Orwellian\ Final\ OTF.otf") format('opentype'); 
-}   */
-
 /* .modal {
-    font-family: 'MissionGothic', serif;
+    font-family: 'mission_gothicregular', serif;
 } */
 
 #title {
-    font-family: 'Ultra', serif;
+    font-family: 'ultra', serif;
     /* margin-left: 460px; */
     padding-top: 10px;
     text-align: center;
@@ -58,7 +64,7 @@ body {
 }
 
 .display {
-    /* font-family: 'MissionGothic', serif; */
+    /* font-family: 'mission_gothicregular', serif; */
     background-color: yellowgreen;
     border-radius: 12px;
     /* color: white; */
