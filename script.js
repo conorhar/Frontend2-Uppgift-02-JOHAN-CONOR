@@ -263,8 +263,11 @@ function newDrawAnimation() {
         $(`#player-${playerCardsDealt}`).hide();
         $(`#player-card-${playerCardsDealt}`).flip(true);
         $("#player-score").text(playerScore);
-        enableButtons();
     }, 1000);
+
+    setTimeout(function() {
+        enableButtons();
+    }, 1500);
 }
 
 $("#new-draw").click(function() {
