@@ -9,7 +9,6 @@ let dealerSecondCardIsShown = false;
 let playerCardsDealt = 2;
 let dealerCardsDealt = 2;
 let runAnimations = true;
-// let modalIsShown = false;
 
 if (localStorage.getItem("deck") === null){
     fetchDeck();
@@ -48,7 +47,6 @@ function reset() {
         returnCardsAnimation();
     }
     deck = JSON.parse(localStorage.getItem("deck"));
-    console.log(deck);
     shuffle(deck);
     playerHand = [];
     dealerHand = [];
